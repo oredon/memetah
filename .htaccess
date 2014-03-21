@@ -1,0 +1,26 @@
+###### -------- php settings
+
+### add type
+AddType application/x-httpd-php .php .html .htm
+
+### save some php error E_ALL & ~E_NOTICE
+php_value error_reporting 6135
+
+### encodings
+# suru---
+php_flag magic_quotes_gpc Off
+php_flag output_buffering Off
+php_flag mbstring.encoding_translation Off
+php_value output_handler none
+php_value default_charset none
+php_value mbstring.language Japanese
+php_value mbstring.http_input auto
+php_value mbstring.http_output pass
+php_value mbstring.internal_encoding none
+php_value mbstring.script_encoding none
+php_value mbstring.substitute_character none
+
+#php_value mbstring.detect_order SJIS,EUC-JP,JIS,UTF-8,ASCII
+
+### end of encodings
+
