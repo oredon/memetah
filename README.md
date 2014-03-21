@@ -4,61 +4,86 @@ memetah
 php tool to replace title, keyword, descriptions of html files
 
 
-notice ���ӏ���
+notice 注意書き
 =======
 
-�����[�J���T�[�o��Ŏg�p���Ă��������B�p�u���b�N��WEB�T�[�o���ɂ͒u���Ȃ��ł�������
+※ローカルサーバ上で使用してください。パブリックなWEBサーバ等には置かないでください
+
 Please use in local server. NOT USE PUBLIC WEB SERVER.
 
-�����̃X�N���v�g���g�������ƂŐ����������Ȃ鑹�Q��g���u���̐ӔC�͈�ؕ������˂܂��̂ŗ\�߂��������������B
+※このスクリプトを使ったことで生じたいかなる損害やトラブルの責任は一切負いかねますので予めご了承ください。
+
 AT YOUR OWN RISK. I shall not be responsible for any loss, damages and troubles.
 
 
 
-�T�v
+概要
 =======
 
-�Etitle��L�[���[�h����tsv�ɏo�͂��Atsv�ŕҏW�������̂����t�@�C���ɔ��f���܂�
-�E�ꖇ�ꖇHTML���J����meta����͂����Ɉꖇ��tsv�ŊǗ��ł���悤�ɂȂ�܂�
+・titleやキーワード等をtsvに出力し、tsvで編集したものを元ファイルに反映します
+
+・一枚一枚HTMLを開いてmetaを入力せずに一枚のtsvで管理できるようになります
 
 
-����
+導入
 =======
 
-�E���[�J���T�[�o�̓K���ȃh�L�������g���[�g��meta���f�B���N�g�����R�s�[
-��jd:\works\XXX\htdocs\meta\
-�EPHP�̐ݒ�͓K���ɒ��ׂĂ�������
-�E�u���E�U�ŏ�L�ɃA�N�Z�X
-��jhttp://localXXX/meta
-�E�u�P�v�T���������f�B���N�g�������
-��jD:\works\xxx\htdocs
-�Etsv���_�E�����[�h���A�ҏW
-�E�u�Q�vtsv���ǂ����K���ɂ����Ď��s
-��jD:\works\xxx\htdocs\hoge.tsv
+・ローカルサーバの適当なドキュメントルートにmetaをディレクトリ毎コピー
+
+例）d:\works\XXX\htdocs\meta\
+
+・PHPの設定は適当に調べてください
+
+・ブラウザで上記にアクセス
+
+例）http://localXXX/meta
+
+・「１」探査したいディレクトリを入力
+
+例）D:\works\xxx\htdocs
+
+・tsvをダウンロードし、編集
+
+・「２」tsvをどこか適当において実行
+
+例）D:\works\xxx\htdocs\hoge.tsv
 
 
-�p�r
+用途
 =======
 
-���S�t�@�C����title��meta���擾������
-�E�u�P�v�łł��܂�
+■全ファイルのtitleやmetaを取得したい
 
-���t�@�C�����X�g�����ł���
-�E�u�P�v�Ń��^�̏o�͂����邩��`�F�b�N���O���Ή\�ł�
-�E�f�t�H���g�ł�html,php,htm�t�@�C�������X�g�A�b�v����悤�ɂ��Ă���܂����Axml��gif�Ȃǂ��ΏۂɊ܂߂邱�Ƃ͉\�ł�
+・「１」でできます
+
+
+■ファイルリストだけでいい
+
+・「１」でメタの出力をするからチェックを外せば可能です
+
+・デフォルトではhtml,php,htmファイルをリストアップするようにしてありますが、xmlやgifなども対象に含めることは可能です
+
 html|htm|php
-��
+を
 html|htm|php|xml|gif
-�̂悤�ɔ��p��|�Ŋg���q����؂�A�u�P�v�̊g���q���ɓ��͂��A���s���Ă�������
 
-��tsv�ŕҏW����meta�𔽉f��������
-�E�u�Q�v�łł��܂�
+のように半角の|で拡張子を区切り、「１」の拡張子欄に入力し、実行してください
 
 
-�g���u���V���[�e�B���O�Ȃ�
+■tsvで編集したmetaを反映させたい
+
+・「２」でできます
+
+
+トラブルシューティングなど
 =======
 
-��HTML�t�@�C���������ݕ�����������
-�E�u�P�v�ɂ��u�Q�v�ɂ�HTML�t�@�C���̕����R�[�h���w�肷��I�v�V����������܂��B
-�E�o�b�N�A�b�v�͕K���Ƃ��Ă�������
+■HTMLファイルが軒並み文字化けした
 
+・「１」にも「２」にもHTMLファイルの文字コードを指定するオプションがあります。
+
+・バックアップは必ずとってください
+
+繰り返しになりますが・・・
+
+必ずローカルサーバのみで使用してください。公開されているサーバで使うと悪意あるユーザに改ざんされたり、意図しないiframeやscriptコードの埋め込みによるハッキングや踏み台にされてしまう等、悪事の片棒を担がされたりする危険性があります。くれぐれも利用は慎重にお願いします。MITで公開していますので私は一切責任を負いません。自己責任で運用してください。

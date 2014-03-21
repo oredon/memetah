@@ -95,7 +95,7 @@ $dirlist = array_dirlist($path,$ext);
 $fullpath = array_fullpath($path, $dirlist);
 ?>
 
-<textarea id="filelistresult" name="filelist">ファイルパス	タイトル	キーワード	デスクリプション
+<textarea id="filelistresult" name="filelist">ファイルパス	タイトル	キーワード	デスクリプション	og:locale	og:type	og:site_name	og:title	og:description	og:image	og:url
 <?php
 $point1 = memory_get_usage($system_mem); // メモリ使用量計測
 
